@@ -23,6 +23,14 @@ Route::middleware(['auth'])->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('hello', [HelloController::class, 'index']);
+// Route::get('hello', [HelloController::class, 'index']);
 
 Route::get('/hello-component', HelloComponent::class);
+
+
+Route::get('hello', [HelloController::class, 'index']);
+Route::get('hello/login', [HelloController::class, 'login']);
+Route::post('hello/post', [HelloController::class, 'post']);
+Route::get('hello/logout', [HelloController::class, 'logout']);
+Route::post('hello/isuser', [HelloController::class, 'isuser']);
+Route::post('hello/isadmin', [HelloController::class, 'isadmin']);
